@@ -206,17 +206,11 @@ speedSwitchBtn.addEventListener("click", () => {
 
 toolBtns.forEach((b) => {
 	b.addEventListener("click", (e) => {
-		if (e.currentTarget.id == "toggleMobileProjects") {
-			toggleAsideMobile()
-			return;
-		}
+		if (e.currentTarget.id == "toggleMobileProjects") { toggleAsideMobile(); return; }
 		toolClickEvent(e, actualTool);
 	})
 	b.addEventListener("touchEnd", (e) => {
-		if (e.currentTarget.id == "toggleMobileProjects") {
-			toggleAsideMobile()
-			return;
-		}
+		if (e.currentTarget.id == "toggleMobileProjects") { toggleAsideMobile(); return; }
 		toolClickEvent(e, actualTool);
 	})
 })
@@ -336,9 +330,6 @@ window.addEventListener("load", async (e) => {
 })
 
 
-toggleMobile.addEventListener("touchend", () => {
-	toggleAsideMobile()
-})
 
 
 themeBtn.addEventListener("click", (e) => {
