@@ -206,20 +206,23 @@ speedSwitchBtn.addEventListener("click", () => {
 
 toolBtns.forEach((b) => {
 	b.addEventListener("click", (e) => {
+		if (e.currentTarget.id == "toggleMobileProjects") {
+			toggleAsideMobile()
+			return;
+		}
 		toolClickEvent(e, actualTool);
 	})
 	b.addEventListener("touchEnd", (e) => {
+		if (e.currentTarget.id == "toggleMobileProjects") {
+			toggleAsideMobile()
+			return;
+		}
 		toolClickEvent(e, actualTool);
 	})
 })
 
 linkBtns.forEach((b) => {
 	b.addEventListener("click", (e) => {
-		console.log((e.currentTarget.id == "toggleMobileProjects"))
-		if (e.currentTarget.id == "toggleMobileProjects") {
-			toggleAsideMobile()
-			return;
-		}
 		setLinkType(e.currentTarget.dataset.type);
 		deselectAllLinkType(linkBtns);
 		e.currentTarget.classList.add("actual-tool");
