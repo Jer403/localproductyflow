@@ -136,6 +136,15 @@ export function setNodeType(type) {
 	nodeType = type;
 }
 
+
+
+function toggleAsideMobile() {
+	aside.classList.toggle("showAside")
+	toggleMobile.firstElementChild.classList.toggle("fa-bars")
+	toggleMobile.firstElementChild.classList.toggle("fa-close")
+}
+
+
 //  D D D D D D   D       D     DD        D   D D D D D D             D
 //  D             D       D     D D       D        D                  D
 //  D              D     D      D  D      D        D                  D
@@ -206,7 +215,10 @@ toolBtns.forEach((b) => {
 
 linkBtns.forEach((b) => {
 	b.addEventListener("click", (e) => {
-		if (e.currentTarget.id == "toggleMobileProjects") return;
+		if (e.currentTarget.id == "toggleMobileProjects") {
+			toggleAsideMobile()
+			return;
+		}
 		setLinkType(e.currentTarget.dataset.type);
 		deselectAllLinkType(linkBtns);
 		e.currentTarget.classList.add("actual-tool");
@@ -321,9 +333,7 @@ window.addEventListener("load", async (e) => {
 
 
 toggleMobile.addEventListener("touchend", () => {
-	aside.classList.toggle("showAside")
-	toggleMobile.firstElementChild.classList.toggle("fa-bars")
-	toggleMobile.firstElementChild.classList.toggle("fa-close")
+	toggleAsideMobile()
 })
 
 
