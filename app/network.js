@@ -215,6 +215,7 @@ toolBtns.forEach((b) => {
 
 linkBtns.forEach((b) => {
 	b.addEventListener("click", (e) => {
+		console.log((e.currentTarget.id == "toggleMobileProjects"))
 		if (e.currentTarget.id == "toggleMobileProjects") {
 			toggleAsideMobile()
 			return;
