@@ -73,7 +73,7 @@ export function createCalendarList(date, month, lang) {
 
     plus.addEventListener("click", (e) => {
         if (getCurrentListProject() != "null") {
-            ul.appendChild(createListElement("", "f", false, ul))
+            ul.appendChild(createListElement("", "f", false, ul, new Date().getTime(), "f"))
             e.currentTarget.nextElementSibling.classList.add("unsave")
         }
     })
@@ -96,7 +96,7 @@ export function createCalendarList(date, month, lang) {
 
 
 
-export function createListElement(text, check, fav, main, surface) {
+export function createListElement(text, check, fav, main, surface, creationDate, inProcess) {
     let saveBtn;
     let txHeight = 23;
     const li = document.createElement("LI");
@@ -109,8 +109,10 @@ export function createListElement(text, check, fav, main, surface) {
     const del = document.createElement("SPAN");
     const copy = document.createElement("SPAN");
     const star = document.createElement("SPAN");
+    const process = document.createElement("SPAN");
 
     star.classList.add("fa", "fa-star", "list-element-star", "disappear");
+    process.classList.add("fa", "fa-clock-o", "list-element-process", "disappear");
     edit.classList.add("fa", "fa-edit", "list-element-edit", "disappear");
     del.classList.add("fa", "fa-trash", "list-element-del", "disappear");
     copy.classList.add("fa", "fa-copy", "list-element-copy", "disappear");
@@ -121,6 +123,7 @@ export function createListElement(text, check, fav, main, surface) {
 
     li.classList.add("list-element", "theme");
     li.setAttribute("draggable", "true")
+    li.dataset.date = creationDate;
 
     if (main) {
         p.classList.add("list-element-text-main")
@@ -143,6 +146,7 @@ export function createListElement(text, check, fav, main, surface) {
     div.appendChild(copy);
     div.appendChild(edit);
     div.appendChild(del);
+    div.appendChild(process);
     div.appendChild(star);
 
     box.appendChild(span);
@@ -195,6 +199,10 @@ export function createListElement(text, check, fav, main, surface) {
 
     if (fav == "t") {
         li.classList.add("favorite")
+    }
+
+    if (inProcess == "t") {
+        li.classList.add("inProcess")
     }
 
     span.addEventListener("click", (e) => {

@@ -73,13 +73,16 @@ export async function update(id) {                     //Updates the project in 
 
 
     tasksText.forEach((t) => {
-        let check = "f", fav = "f";
+        let check = "f", fav = "f", proc = "f", date = t.dataset.date;
         if (t.previousElementSibling.classList.contains("fa-check-square-o")) check = "t";
         if (t.parentNode.parentNode.classList.contains("favorite")) fav = "t";
+        if (t.parentNode.parentNode.classList.contains("inProcess")) proc = "t";
         listDoc[listDoc.length] = JSON.parse(`
 		   {"check": "${check}", 
 			"txt":"${t.textContent}",
-            "fav":"${fav}"}`);
+            "fav":"${fav}",
+            "proc":"${proc}",
+            "date":"${date}"}`);
     })
 
     let dataToSave = {};
@@ -135,7 +138,7 @@ export async function loadCalendarList(date, surface) {  //When you click in a p
     let item = localStorage.getItem(`calendarList_${date}`)
 
     if (item == "null" || !item) {
-        surface.appendChild(createListElement("", "f", "f", false, surface))
+        surface.appendChild(createListElement("", "f", "f", false, surface, new Date().getTime(), "f"))
         return;
     }
 
@@ -190,7 +193,7 @@ export function loadProject(surface, Project, main, listProjectName) {       		 
     cleanSurface(surface);
     if (Project) {
         Project.forEach((l) => {
-            const element = createListElement(l.txt, l.check, l.fav, main, surface);
+            const element = createListElement(l.txt, l.check, l.fav, main, surface, l.date, l.proc);
             surface.appendChild(element);
         })
     }

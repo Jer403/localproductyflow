@@ -60,10 +60,6 @@ setActualCalendarPosition(0)
 
 
 
-let datenumber = 123124153223
-const dateByNumber = new Date(datenumber)
-console.log(dateByNumber)
-
 
 
 export function getCalendarWidth() {
@@ -144,7 +140,7 @@ errorLog.addEventListener("click", (e) => {
 
 paste.addEventListener("click", () => {
 	if (getCurrentListProject() != "null" || !getCurrentListProject()) {
-		const element = createListElement(localStorage.getItem("clipboard"), "f", "f", true, surfaceList);
+		const element = createListElement(localStorage.getItem("clipboard"), "f", "f", true, surfaceList, new Date().getTime(), "f");
 		surfaceList.appendChild(element);
 		saveList.classList.add("unsave")
 	}
@@ -159,7 +155,7 @@ edit.addEventListener("click", (e) => {
 
 plus.addEventListener("click", (e) => {
 	if (getCurrentListProject() != "null" || !getCurrentListProject()) {
-		const element = createListElement("", "f", "f", true, surfaceList);
+		const element = createListElement("", "f", "f", true, surfaceList, new Date().getTime(), "f");
 		surfaceList.appendChild(element);
 		e.currentTarget.nextElementSibling.classList.add("unsave")
 	}
