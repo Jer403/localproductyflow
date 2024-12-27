@@ -186,12 +186,16 @@ body, html {
     transition: color .8s;
 }
 
-.list-element-edit, .list-element-del, .list-element-star, .list-element-process{
+.list-element-edit, .list-element-del, .list-element-star{
     margin: 3px 1px 1px 2px;
     color: var(--buttons-light-icon);
 }
 .list-element-copy{
     margin: 3px 3px 1px 2px;
+    color: var(--buttons-light-icon);
+} 
+.list-element-process{
+    margin: 3px 1px 1px 2px;
     color: var(--buttons-light-icon);
 }
 
