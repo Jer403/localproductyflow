@@ -281,7 +281,9 @@ body, html {
 }
 .calendar-list ul li div span{
     margin: 1px 0 0 2px;
-
+}
+.calendar-list ul li div .list-element-process{
+    margin: 0 0 0 2px;
 }
 .calendar-element-list{
     padding: 5px ;

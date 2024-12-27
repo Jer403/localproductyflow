@@ -2,7 +2,7 @@ import { getSaveList, hideAsides } from "../taskmanager.js";
 import { appearInput, setIsSaveToFalse, setIsSaveToTrue } from "./tmUtils.js";
 import { convertStringDateToStringEn, convertStringDateToStringEs, getMonthEn, getMonthEs } from "../utils.js";
 import { copyText, dragLeaveEvent, dragOverEvent, dropEvent, editProjectName, hideModifiButtons, setInputEventListener, setLiEventListener, showModifiButtons } from "./events.js";
-import { deleteProject, loadCalendarList, loadListOnAction, updateCalendar } from "./requests.js";
+import { deleteProject, loadCalendarList, loadListOnAction, update, updateCalendar } from "./requests.js";
 import { checkFromBox, checkTheBox, getCurrentListProject, setActualProject } from "./tmUtils.js";
 
 export function createCalendarList(date, month, lang) {
