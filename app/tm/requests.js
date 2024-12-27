@@ -73,7 +73,7 @@ export async function update(id) {                     //Updates the project in 
 
 
     tasksText.forEach((t) => {
-        let check = "f", fav = "f", proc = "f", date = t.dataset.date;
+        let check = "f", fav = "f", proc = "f", date = t.parentNode.parentNode.dataset.date;
         console.log(date, t)
         if (t.previousElementSibling.classList.contains("fa-check-square-o")) check = "t";
         if (t.parentNode.parentNode.classList.contains("favorite")) fav = "t";
