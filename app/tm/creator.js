@@ -178,6 +178,11 @@ export function createListElement(text, check, fav, main, surface, creationDate,
         (saveBtn) ? setIsSaveToFalse(saveBtn) : setIsSaveToFalse();
         surface.removeChild(e.currentTarget.parentNode.parentNode.parentNode)
     })
+    process.addEventListener("click", (e) => {
+        e.stopPropagation();
+        setIsSaveToFalse(saveBtn)
+        li.classList.toggle("inProcess")
+    })
     star.addEventListener("click", (e) => {
         e.stopPropagation();
         setIsSaveToFalse(saveBtn)
@@ -189,6 +194,7 @@ export function createListElement(text, check, fav, main, surface, creationDate,
     });
 
     edit.addEventListener("dblclick", (e) => { e.stopPropagation() })
+    process.addEventListener("dblclick", (e) => { e.stopPropagation() })
     del.addEventListener("dblclick", (e) => { e.stopPropagation() })
     star.addEventListener("dblclick", (e) => { e.stopPropagation() })
     copy.addEventListener("dblclick", (e) => { e.stopPropagation() })

@@ -195,6 +195,10 @@ body, html {
     color: var(--buttons-light-icon);
 }
 
+.list-element-process{
+    font-size: 120%;
+}
+
 
 .modifi-box{
     display: flex;
@@ -998,6 +1002,9 @@ spaan{
 }
 .list-element-star:hover{
     color: #ffca00;
+}
+.list-element-process:hover{
+    color: #ff9900;
 }
 
 
