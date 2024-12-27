@@ -171,6 +171,7 @@ body, html {
 
 .list-element-main:hover > .list-element-box {
     height: auto;
+    padding: 2px 85px 17px 2px;
 }
 
 .list-element-text{
