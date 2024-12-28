@@ -77,10 +77,9 @@ export function setInputEventListener(l, txHeight, saveBtn) {
     })
 }
 
-export function setLiEventListener(l, saveBtn) {
+export function setLiEventListener(l) {
     l.addEventListener("dblclick", (e) => {
         appearInput(e.currentTarget.firstElementChild);
-        setIsSaveToFalse(saveBtn);
     })
     l.addEventListener("mouseenter", (e) => {
         Array.from(e.currentTarget.lastElementChild.lastElementChild.children).forEach(e => e.classList.remove("disappear"))

@@ -201,6 +201,7 @@ export function createListElement(text, check, fav, main, surface, creationDate,
 
     if (check == "t") {
         checkFromBox(box);
+        setIsSaveToFalse(saveBtn)
     }
 
     if (fav == "t") {
@@ -216,7 +217,7 @@ export function createListElement(text, check, fav, main, surface, creationDate,
         checkTheBox(e.currentTarget);
     })
 
-    setLiEventListener(li, saveBtn);
+    setLiEventListener(li);
     (saveBtn) ? setInputEventListener(texta, txHeight, saveBtn) : setInputEventListener(texta, txHeight)
 
 
