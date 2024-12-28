@@ -82,10 +82,6 @@ export function setLiEventListener(l, saveBtn) {
         appearInput(e.currentTarget.firstElementChild);
         setIsSaveToFalse(saveBtn);
     })
-    l.addEventListener("click", (e) => {
-        checkFromBox(e.currentTarget.firstElementChild)
-        setIsSaveToFalse(saveBtn);
-    })
     l.addEventListener("mouseenter", (e) => {
         Array.from(e.currentTarget.lastElementChild.lastElementChild.children).forEach(e => e.classList.remove("disappear"))
     })
